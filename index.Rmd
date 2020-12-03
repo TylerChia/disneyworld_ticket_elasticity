@@ -21,12 +21,12 @@ library(scales)
 ```
 
 ## I: Abstract
-Disney markets their amusement parks, Disneyland and Disney World, as "the happiest place on Earth."  If I am being honest with myself, I think that Disneyland is one of my favorite places to go on vacation regardless of the fact that tickets are very expensive.  I have never been to Disney World due to the fact that I live on the west coast and Disneyland is a lot closer to me in terms of distance.  I am under the impression that Disney World is similar to Disneyland, but with more theme parks.  Staying on the topic of price, it is clear that over the course of my lifetime, I have seen Disneyland tickets become increasingly more and more expensive.  This is interesting to think about as the parks have been ideally the same over the past 10 years.  They maybe have added a few new rides here and there over the years, but the parks haven't drastically changed.  So the question I pose is why the ticket prices continue to rise at a constant rate and why people still overwhelmingly choose to go to Disneyland or Disney World when traveling to Anaheim or Orlando.
+Disney markets their amusement parks, Disneyland and Disney World, as "the happiest place on Earth."  If I am being honest with myself, I think that Disneyland is one of my favorite places to go on vacation regardless of the fact that tickets are very expensive.  I have never been to Disney World due to the fact that I live on the west coast and Disneyland is a lot closer to me in terms of distance.  I am under the impression that Disney World is similar to Disneyland, but with more theme parks.  Staying on the topic of price, it is clear that over the course of my lifetime, I have seen Disneyland tickets become increasingly more and more expensive.  This is interesting to think about as the parks have been ideally the same over the past 10 years.  They might have added a few new rides here and there over the years, but the parks haven't drastically changed.  So the question I pose is why the ticket prices continue to rise at a constant rate and why people still overwhelmingly choose to go to Disneyland or Disney World when traveling to Anaheim or Orlando.
 
 *****
 
 ## II: Introduction
-As stated above, I am curious as to why attendance at Disney World has continually increased even as ticket prices have increased as well over the past decade.  According to economic theory and common thought, raising the price of a normal good theoretically decreases the demand.  However, this is not always true as it depends on the elasticity of demand for the good.  According to Wikipedia, price elasticity of demand is defined as "a measure used to show the responsiveness, or elasticity, of the quantity demanded of a good or service to a change in its price."  An elastic good responds more proportionally to changes in other variables while and inelastic good changes less than proportionally to other variables.  In other words, for an inelastic good, a price increase of 1% results in a quantity increase by less than 1%.  Examples of elastic goods include certain good and beverages while an example of an inelastic good is prescription drugs.  Prescriptions are considered inelastic as the demand remains relativiely static even as price changes.  Elasticity can be calculated by dividing the percentage change in quantity demanded by the percentage change in price.  After taking the absolute value of that, if the result is higher than 1, the good is considered relatively elastic, whereas if the result is lower than 1 it is relatively inelastic.  Since I have found data on both attendance and prices for Disney World tickets from 2008-2018 I can easily calculate own price elasticity and average it over that 11 year period to get an idea of why people increasingly attend Disney theme parks even as prices continue to rise.
+As stated above, I am curious as to why attendance at Disney World has continually increased even as ticket prices have increased as well over the past decade.  According to economic theory and common thought, raising the price of a normal good theoretically decreases the demand.  However, this is not always true as it depends on the elasticity of demand for the good.  According to Wikipedia, price elasticity of demand is defined as "a measure used to show the responsiveness, or elasticity, of the quantity demanded of a good or service to a change in its price."  An elastic good responds more proportionally to changes in other variables while an inelastic good changes less than proportionally to other variables.  In other words, for an inelastic good, a price increase of 1% results in a quantity increase by less than 1%.  Examples of elastic goods include certain goods and beverages while an example of an inelastic good is prescription drugs.  Prescriptions are considered inelastic as the demand remains relatively static even as price changes.  Elasticity can be calculated by dividing the percentage change in quantity demanded by the percentage change in price.  After taking the absolute value of that, if the result is higher than 1, the good is considered relatively elastic, whereas if the result is lower than 1 it is relatively inelastic.  Since I have found data on both attendance and prices for Disney World tickets from 2008-2018 I can easily calculate own-price elasticity and average it over that 11 year period to get an idea of why people increasingly attend Disney theme parks even as prices continue to rise.
 
 *****
 
@@ -40,7 +40,7 @@ The data for this project is taken from two separate sources and will be combine
 - Disney's Animal Kingdom
 - Overall Attendance
 
-The second dataset for this project contains the prices for Disney World tickets since the year 1971.  This data was taken from an article found on CNBC and was last updated on July 9, 2020.  While ticket prices can vary throughout the year, the data is based on the average single day pass taking into account both peark and off-peak prices.  In the article, it states that most of the analysis was done by GoBankingRates which is a personal finance website that used data from AllEars.net in order to determine how Disney World admission fees have changed since 1971.  In addition, they also made it clear that all the data was pertaining to Magic Kingdom as opposed to all the different theme parks so I will have to keep that in mind when calculating elasticity.  According to a Disney spokesperson, the data and analysis was deemed as "generally accurate."  The dataset contains 49 observations which accounts for all 49 years from 1971 to 2019.  In addition, there are two variables:
+The second dataset for this project contains the prices for Disney World tickets since the year 1971.  This data was taken from an article found on CNBC and was last updated on July 9, 2020.  While ticket prices can vary throughout the year, the data is based on the average single day pass taking into account both peak and off-peak prices.  In the article, it states that most of the analysis was done by GoBankingRates which is a personal finance website that used data from AllEars.net in order to determine how Disney World admission fees have changed since 1971.  In addition, they also made it clear that all the data was pertaining to Magic Kingdom as opposed to all the different theme parks so I will have to keep that in mind when calculating elasticity.  According to a Disney spokesperson, the data and analysis was deemed as "generally accurate."  The dataset contains 49 observations which accounts for all 49 years from 1971 to 2019.  In addition, there are two variables:
 
 - Year
 - Price
@@ -52,7 +52,8 @@ Using these two datasets I will be able to calculate the own price elasticity of
 ## IV: Exploratory Data Analysis
 
 ### IV.I: Attendance Data
-Before getting into the actual process of calculating the own price elasticity of demand for Disney World ticket prices, I wanted to a bit of introductory data analysis.  This entails simple code that rearranges the data in a way where I can possibly make some assumptions about the data so that the results will not come as a surprise later.  
+Before getting into the actual process of calculating the own price elasticity of demand for Disney World ticket prices, I wanted to do a bit of introductory data analysis.  This entails simple code that rearranges the data in a way where I can possibly make some assumptions about the data so that the results will not come as a surprise later.  
+
 The first thing that I wanted to do was see which theme park in Disney World received the highest total attendance from the year 2008 to 2018.  This was easy to do as I just summed up the attendance for each park for each year and created a separate dataframe to be graphed as a histogram seen below.
 
 <center>
@@ -107,7 +108,7 @@ ggplot(data = attendance, aes(x = attendance$Year)) +
 
 As seen above, all the parks have an upward trend in terms of attendance.  The only years I can see that have a decrease in attendance for most of the theme parks are 2009-2010 and 2015-2016.  Other than that, all of them have seen a significant increase in attendance over the past 11 years.
 
-Since I will be focusing on finding the elasticity of tickets for Magic Kingdom specifically, I thought it would be good idea to the trend in attendance for just this theme park.  I extracted the data for Magic Kingdom and graphed it by itself below.
+Since I will be focusing on finding the elasticity of tickets for Magic Kingdom specifically, I thought it would be a good idea to view the trend in attendance for just this theme park.  I extracted the data for Magic Kingdom and graphed it by itself below.
 
 <center>
 ```{r, echo=F, message=F, warning=F}
@@ -148,6 +149,7 @@ Once again, we can see an upward trend in terms of pricing for Magic Kingdom tic
 *****
 
 ## V: Analysis and Discussion
+Moving on to the actual calculations of this project, the first step is to mutate both the attendance and prices datasets in order to find the percentage change of each from year to year.  Once this is done, we can easily calculate elasticity of demand by dividing the percentage change in attendance by the percentage change in price for each individual year.  
 
 ```{r, echo=F, message=F, warning=F}
 attendance = attendance %>% 
@@ -159,6 +161,8 @@ chart1 = attendance %>%
 knitr::kable(chart1, caption = "Percentage Change in Magic Kingdom Attendance", col.names = c("Year","Attendance","Percentage Change"), "simple", format.args = list(big.mark = ",", scientific = FALSE))
 ```
 
+The chart above displays the percentage change in attendance at Disney World's Magic Kingdom per year.  Since we do not have data from 2007, 2008's percentage change would be nonexistent, hence why there is an "NA" at that position.  Looking more closely at the data, the percentage changes remain relatively small from year to year with the highest being from 2012 to 2013 as there was almost a 6% increase in attendance.  From the numbers, I can see that there are only two years in which attendance actually decreased.  Attendance dropped by 1.5% from 2009 to 2010 and by 0.47% from 2015 to 2016.
+
 ```{r, echo=F, message=F, warning=F}
 prices1 = prices1 %>% 
   mutate(pct_change_price = ((Price - lag(Price)) / lag(Price)) * 100)
@@ -168,6 +172,10 @@ prices1 = prices1 %>%
 
 knitr::kable(prices1, caption = "Percentage Change in Magic Kingdom Ticket Prices", col.names = c("Year","Price","Percentage Change"), "simple", format.args = list(scientific = FALSE))
 ```
+
+As for the percentage change in price for single day passes for Magic Kingdom, they seem to be a little higher than that of the percentage changes for attendance.  The lowest percentage change is 3.4% while the highest is 6.7%.  There were zero years from 2008 to 2018 during which the ticket prices decreased.  In addition, since we see that the percentage changes in price are higher than the percentage changes in attendance, we can expect the tickets to be relatively inelastic.
+
+To reiterate, the way in which I will calculate elasticity is by dividing the percentage change of demand (attendance) by the percentage change in price for each individual year.  Once doing that, I can take the absolute value in order to get the results for elasticity.
 
 ```{r, echo=F, message=F, warning=F}
 joined = merge(attendance, prices1, by = "Year")
@@ -181,9 +189,27 @@ chart2 = joined %>%
 knitr::kable(chart2, caption = "Own Price Elasticity of Demand for Magic Kingdom Tickets", col.names = c("Year","Elasticity"), "simple", format.args = list(scientific = FALSE))
 ```
 
+Once these calculations were finalized, I was able to get the own-price elasticity of demand for Magic Kingdom single day passes as shown in the chart above.  As seen above, every single year saw an elasticity of demand under 0, thus proving my theory that Magic Kingdom tickets are relatively inelastic.  With that being said, there are a few years that come extremely close to being unit elastic which means that the percentage change in demand was almost equal to the percentage change in price.  From 2012 to 2013, elasticity was 0.88, from 2013 to 2014 elasticity was 0.95, and finally from 2014 to 2015 elasticity was 0.99 which is pretty much unit elastic.  It would be interesting to do research relating to that time period to see why tickets were not as inelastic.  However, from 2015 to 2016 tickets became extremely inelastic as it got as low as 0.09.
+
+The next thing that I wanted to do was to average out the elasticities for this 11 year period in order to make a general assumption about the elasticity of demand for tickets.
+
+```{r, echo=F, message=F, warning=F}
+joined1 = joined %>% 
+  filter(Year > 2008) 
+
+average = mean(joined1$elasticity)
+
+averagedf = data.frame("Average" = average)
+
+knitr::kable(averagedf, caption = "Average Elasticity of Demand", col.names = c("Average"), "simple", format.args = list(scientific = FALSE))
+```
+
+As seen, the average own-price elasticity of demand for Disney World's Magic Kingdom single day passes is 0.49, make this a relatively inelastic good.
+
 *****
 
 ## VI: Conclusion
+As a result of this project, I was able to come to the conclusion that the average elasticity of demand for Magic Kingdom single day passes from 2008 to 2018 is around 0.49.  Because it is under 1, it is relatively inelastic, meaning that a change in price has a relatively small effect on the quantity of the good demanded.  This would explain a lot in terms of people's purchasing habits of theme park tickets.  As stated in the introduction, people, including myself, continue to purchase Disney's theme park tickets regardless of how expensive it is.  Every single time I am in Los Angeles or near Anaheim, I feel the want to go to Disneyland and I can assume it would be the same if I was in Orlando, near Disney World.  For all these reasons, Disney's pricing model/strategy relating to its theme parks is makes a lot of sense.  Due to the fact that their tickets remain relatively inelastic, it makes complete sense that they are able to continuously increase their prices year by year and still see the same attendance, if not an increase in attendance, at all their parks.  I would relate this to the fact that many people get a sense of nostalgia when visiting these theme parks as it brings them back to a time in their childhood where they felt a sense of wonder and amazement.  This could be one reason why people want to continue to visit places such as Disneyland and Disney World.  Continuing this trend though, I can only see Disney's prices to continue to increase as time goes on.  Especially because of the COVID-19 pandemic where they lost a lot of revenue, we can expect prices to rise in the near future once again.  In terms of generalizing this pricing model to all theme parks across the world, I am not sure if other theme parks will see the same success that Disney has had.  Disney oftentimes holds a special place in people's hearts and memories which is why I believe that their tickets are more inelastic than those of other amusement parks.  Once again, I believe that Disney did a really good job marketing their theme parks as the "happiest places on earth."  Before finishing, I would like to say that the numbers in this project are all rough estimates as the ticket prices fluctuate during the course of the year.  However, through these estimates, it became possible to complete my task of calculating the price elasticity of demand for Magic Kingdom's single day passes from 2008 to 2018.
 
 *****
 
